@@ -1,0 +1,654 @@
+:root {
+    /* --bs-font-sans-serif ভেরিয়েবলে নতুন ফন্ট ফ্যামিলি সেট করুন */
+    --bs-font-sans-serif: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: var(--bs-font-sans-serif);
+    /* ছবির মতো বোল্ড দেখানোর জন্য 700 ব্যবহার করা হলো */
+    font-weight: 700;
+    scroll-behavior: smooth;
+
+}
+
+.container {
+    justify-content: space-around;
+    display: flex;
+    background-color: rgb(236, 236, 236);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(236, 236, 236);
+}
+
+.container .navbar-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+
+
+.container .navbar-text a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.d-flex input {
+    width: 400px;
+}
+
+.navbar-1 {
+    height: 80px;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+.dropdown-menu .dropdown-item {
+    text-align: left !important;
+    padding-left: 1rem;
+    justify-content: flex-start;
+    display: flex;
+    transition: 0.2s ease-in-out;
+
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #222222;
+    color: white;
+    border-radius: 10px;
+}
+
+.dropdown a {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .nav-link:hover {
+    color: white;
+}
+
+.dropdown a i {
+    font-size: 12px;
+}
+
+.nav {
+    z-index: 999;
+    top: 0px;
+    position: sticky;
+    width: 100%;
+    align-items: center;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #222222;
+}
+
+.nav-dropdown {
+    display: flex;
+    justify-self: space-around;
+    align-items: center;
+}
+
+.nav-item .nav-link {
+    align-self: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* nav hover */
+
+.nav-item.dropdown .nav-link .bi-chevron-down {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🎯 Hover korle icon rotate hobe (Shudhu Desktop Dropdown-er jonno) 🎯 */
+.nav-item.dropdown:hover .nav-link .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+.nav-item .nav-link {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 8px !important;
+    color: white;
+}
+
+.nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background-color: aqua;
+    width: 80%;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.nav-item .nav-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+/* Cart */
+.btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.btn-cart::after {
+    content: attr(data-quantity);
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    top: 115%;
+}
+
+.icon-cart {
+    width: 24.38px;
+    height: 30.52px;
+    transition: .2s linear;
+}
+
+.icon-cart path {
+    fill: rgb(240, 8, 8);
+    transition: .2s linear;
+}
+
+.btn-cart:hover>.icon-cart {
+    transform: scale(1.2);
+}
+
+.btn-cart:hover>.icon-cart path {
+    fill: rgb(186, 34, 233);
+}
+
+.btn-cart:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: 105%;
+}
+
+.quantity {
+    display: none;
+}
+
+/* Cart */
+
+/* home gallery */
+#carouselExampleAutoplaying {
+    height: 400px;
+    width: 100%;
+}
+
+#carouselExampleAutoplaying .carousel-inner,
+#carouselExampleAutoplaying .carousel-item {
+    height: 100%;
+}
+
+#carouselExampleAutoplaying .carousel-item img {
+    margin-top: 20px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* home card */
+
+.home_header, .home_header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+    text-decoration: underline;
+}
+
+.card_contaniner {
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+
+.card_contaniner .card {
+    width: 280px !important;
+    height: 420px !important;
+    transition: 0.25s ease-in-out;
+}
+
+.card_contaniner .card:hover {
+    transform: scale(0.98);
+    box-shadow: 10px 4px 8px rgba(150, 150, 150, 0.2);
+}
+
+.card_contaniner .card:hover>.card-body .btn {
+    background-color: #222224;
+    color: white;
+    border: none;
+}
+
+.card-body .card-title {
+    margin-top: -5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222224;
+}
+
+.card-body p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222224;
+
+}
+
+.card-body p span {
+    font-size: 12px;
+    color: rgb(116, 114, 114);
+}
+
+.navbar {
+    display: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff7f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #222222);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .card_contaniner {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .navbar {
+        width: 100%;
+        display: flex;
+    }
+
+    .d-flex input {
+        width: 100px;
+    }
+
+    .small {
+        width: 100px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .d-flex input {
+        width: 100px;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .offcanvas .nav-item .nav-link:active> .offcanvas .nav-item .nav-link .bi-chevron-down {
+        transform: rotate(180deg) !important;
+    }
+
+
+    .nav-item ul li a {
+        margin-left: 20px;
+        font-size: 14px;
+        color: black;
+    }
+
+    .offcanvas-body .navbar-nav>.nav-item {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 🎯 FIX 2: nav-link (PLATFORM, GENRE) -er upor/niche faka jayga control kora */
+    .offcanvas-body .nav-item>.nav-link {
+        margin: 0 !important;
+        /* Line-gulo ke kache anar jonno padding kom kora holo */
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 🎯 FIX 3: Collapse items (STEAM, EPIC ityadi) -er upor/niche faka jayga control kora */
+    .offcanvas-body .collapse .dropdown-item {
+        margin: 0 !important;
+        padding: 5px 1rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .nav-item .nav-link:hover {
+        border-bottom: none !important;
+
+    }
+
+    .offcanvas-body .nav-link {
+        font-size: 16px !important;
+        color: black !important;
+    }
+
+    .nav-item .nav-link:hover::after {
+        transform: scaleX(0) !important;
+    }
+
+    .offcanvas-body .nav-link:hover {
+        color: #222224 !important;
+    }
+
+
+    .offcanvas {
+        width: 250px !important;
+    }
+
+    .navbar {
+        background-color: transparent !important;
+    }
+
+    .fixed-top {
+        background-color: transparent !important;
+    }
+
+    .navbar-toggler {
+        border: 1px solid transparent !important;
+        padding: -10px;
+    }
+
+
+    .container-fluid {
+        margin-top: 20px;
+    }
+
+    .navbar-logo, .navbar-logo a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        display: block;
+        padding: 0.20rem 0.30rem !important;
+        /* Default chilo 0.75rem. Ekhon halka kora holo */
+        margin: 0 !important;
+
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .navbar-text {
+        display: none !important;
+    }
+
+    .small {
+        display: none !important;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .container-md {
+        width: 400px;
+    }
+
+    .navbar {
+        margin-top: -20px;
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        /* যাতে সার্চ বার নিচে আসে */
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    .d-flex {
+        margin-top: 10px;
+        width: 90%;
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .d-flex input {
+        width: 500px;
+    }
+
+    #carouselExampleAutoplaying {
+        height: 200px;
+        margin-top: 30px;
+    }
+
+    #carouselExampleAutoplaying .carousel-item img {
+        height: 200px;
+    }
+
+    .nav {
+        display: none !important;
+    }
+
+    .card_contaniner {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .card_contaniner .card {
+        width: calc(50% - 15px) !important;
+        height: auto !important;
+        max-width: none;
+    }
+
+    .card-body .card-title {
+        margin-top: -5px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #222224;
+    }
+
+    .card-body p {
+        font-size: 12px;
+        font-weight: 600;
+        color: #222224;
+    }
+
+    .card-body p span {
+        font-size: 10px;
+        color: rgb(116, 114, 114);
+    }
+
+
+    .home_header {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .dropdown {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: 880px) {
+    .nav {
+        display: flex;
+    }
+
+    .nav-dropdown .nav-link {
+        font-size: 10px;
+    }
+}
+
+/* footer */
+
+.footer {
+    margin-top: 200px;
+    background-color: #222222;
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-size: 14px;
+}
+
+.container8 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 30px;
+}
+
+.footer-col h2 img {
+    margin-bottom: 10px;
+}
+
+.footer-col p {
+    margin-right: 10px;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #00d9e9;
+}
+
+.branding .logo {
+    color: #f97316;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.branding p {
+
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-media a:hover {
+    color: aqua;
+}
+
+.contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #3d2d1f;
+    margin: 20px 0;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.bottom-row p {
+    margin: 0;
+}
+
+.policy-links a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.policy-links a:hover {
+    color: #f97316;
+}
